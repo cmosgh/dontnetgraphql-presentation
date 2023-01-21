@@ -38,3 +38,6 @@ C:\development\dotnet\MinimalApi\obj\Debug\net6.0\refint\MinimalApi.dll
 C:\development\dotnet\MinimalApi\obj\Debug\net6.0\MinimalApi.pdb
 C:\development\dotnet\MinimalApi\obj\Debug\net6.0\MinimalApi.genruntimeconfig.cache
 C:\development\dotnet\MinimalApi\obj\Debug\net6.0\ref\MinimalApi.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Faker.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Faker.Net.6.0.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\de-DE\Faker.Net.6.0.resources.dll

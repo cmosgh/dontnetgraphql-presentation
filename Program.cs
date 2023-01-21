@@ -16,9 +16,5 @@ app.UseGraphQLPlayground(
         GraphQLEndPoint = "/graphql", // url of GraphQL endpoint
         SubscriptionsEndPoint = "/graphql", // url of GraphQL endpoint
     });
-await app.RunAsync();
 
-public class Query
-{
-    public static string hello(string? name = "World") => $"Hello {name}!";
-}
+await app.RunAsync();
