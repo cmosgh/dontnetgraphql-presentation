@@ -45,9 +45,9 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
-            "Faker.Net": {
+            "Faker.NETCore": {
               "target": "Package",
-              "version": "[2.0.154, )"
+              "version": "[1.0.2, )"
             },
             "GraphQL": {
               "target": "Package",
@@ -60,6 +60,10 @@
             "GraphQL.Client.Serializer.Newtonsoft": {
               "target": "Package",
               "version": "[5.1.0, )"
+            },
+            "GraphQL.MemoryCache": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             },
             "GraphQL.Server.All": {
               "target": "Package",

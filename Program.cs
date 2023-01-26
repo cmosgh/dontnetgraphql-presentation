@@ -9,12 +9,17 @@ var app = builder.Build();
 app.UseDeveloperExceptionPage();
 app.UseWebSockets();
 app.UseGraphQL(); // default path is /graphql
-app.UseGraphQLPlayground(
-    "/graphqli", // url to host Playground at
-    new GraphQL.Server.Ui.Playground.PlaygroundOptions
-    {
-        GraphQLEndPoint = "/graphql", // url of GraphQL endpoint
-        SubscriptionsEndPoint = "/graphql", // url of GraphQL endpoint
-    });
+
+// use playground only in devmode
+if (app.Environment.IsDevelopment())
+{
+    app.UseGraphQLPlayground(
+        "/graphqli", // url to host Playground at
+        new GraphQL.Server.Ui.Playground.PlaygroundOptions
+        {
+            GraphQLEndPoint = "/graphql", // url of GraphQL endpoint
+            SubscriptionsEndPoint = "/graphql", // url of GraphQL endpoint
+        });
+}
 
 await app.RunAsync();

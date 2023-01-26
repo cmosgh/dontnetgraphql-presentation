@@ -9,10 +9,11 @@
 
     <ItemGroup>
       <PackageReference Include="Faker" Version="1.2.0" />
-      <PackageReference Include="Faker.Net" Version="2.0.154" />
+      <PackageReference Include="Faker.NETCore" Version="1.0.2" />
       <PackageReference Include="GraphQL" Version="7.2.2" />
       <PackageReference Include="GraphQL.Client.Abstractions.Websocket" Version="5.1.0" />
       <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="5.1.0" />
+      <PackageReference Include="GraphQL.MemoryCache" Version="7.2.2" />
       <PackageReference Include="GraphQL.Server.All" Version="7.2.0" />
       <PackageReference Include="GraphQL.Server.Ui.Playground" Version="7.2.0" />
     </ItemGroup>
