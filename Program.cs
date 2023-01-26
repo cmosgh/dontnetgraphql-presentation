@@ -2,7 +2,7 @@ using GraphQL;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGraphQL(b => b
-    .AddAutoSchema<Query>() // schema
+    .AddAutoSchema<Query>(c=>c.WithMutation<Mutation>()) // schema
     .AddSystemTextJson()); // serializer
 
 var app = builder.Build();
