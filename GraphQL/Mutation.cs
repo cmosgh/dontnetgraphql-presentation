@@ -26,4 +26,24 @@ public class Mutation
         db.SaveChanges();
         return person;
     }
+
+    [GraphQLMetadata("removePerson")]
+    public static int removePerson(int id)
+    {
+        // inject dbcontext
+        using var db = new AddressBookDb(new DbContextOptionsBuilder<AddressBookDb>()
+            .UseInMemoryDatabase("AddressBook")
+            .Options);
+
+        // remove person
+        var person = db.People.Find(id);
+        if (person == null)
+        {
+            return 0;
+        }
+
+        db.People.Remove(person);
+        db.SaveChanges();
+        return id;
+    }
 }
