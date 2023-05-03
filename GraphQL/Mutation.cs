@@ -1,17 +1,29 @@
-﻿using GraphQL;
+﻿using Faker.Resources;
+using GraphQL;
+using Microsoft.EntityFrameworkCore;
+using MinimalApi.Db;
 using MinimalApi.GraphQL;
 
-[GraphQLMetadata("mutation" )]
+[GraphQLMetadata("mutation")]
 public class Mutation
 {
-    public static Person AddPerson(AddPersonInput input)
+    [GraphQLMetadata("createPerson")]
+    public static Person createPerson(string name, int age)
     {
-        return new Person
+        // inject dbcontext
+        using var db = new AddressBookDb(new DbContextOptionsBuilder<AddressBookDb>()
+            .UseInMemoryDatabase("AddressBook")
+            .Options);
+
+        // add person
+        var person = new Person
         {
-            Id = Faker.NumberFaker.Number(0, 100),
-            Name = input.Name,
-            Age = input.Age,
-            Address = null
+            Name = name,
+            Age = age
         };
+
+        db.People.Add(person);
+        db.SaveChanges();
+        return person;
     }
 }

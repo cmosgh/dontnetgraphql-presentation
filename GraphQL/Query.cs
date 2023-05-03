@@ -1,11 +1,12 @@
 ﻿using Faker;
 using GraphQL;
+using Microsoft.EntityFrameworkCore;
+using MinimalApi.Db;
 
 // create a base data array with 10 persons that I can filter in query later
 
 public class Query
 {
-    
     static IEnumerable<Person> _data = Enumerable.Range(1, 10).Select(i => new Person
     {
         Id = i,
@@ -37,6 +38,12 @@ public class Query
     [GraphQLMetadata("persons")]
     public static IEnumerable<Person> persons(string? nameContains)
     {
-        return !string.IsNullOrEmpty(nameContains) ? _data.Where(p => p.Name.Contains(nameContains)) : _data;
+        // inject db context
+        using var db = new AddressBookDb(new DbContextOptionsBuilder<AddressBookDb>()
+            .UseInMemoryDatabase("AddressBook")
+            .Options);
+
+        // filter by name and if no results return empty list
+        return db.People.Where(p => p.Name.Contains(nameContains ?? string.Empty)).ToList();
     }
 }

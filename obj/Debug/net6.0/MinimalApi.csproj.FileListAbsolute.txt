@@ -41,3 +41,14 @@ C:\development\dotnet\MinimalApi\obj\Debug\net6.0\ref\MinimalApi.dll
 C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Faker.dll
 C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Faker.NETCore.dll
 C:\development\dotnet\MinimalApi\bin\Debug\net6.0\de-DE\Faker.NETCore.resources.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\development\dotnet\MinimalApi\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
