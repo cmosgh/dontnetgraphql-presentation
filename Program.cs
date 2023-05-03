@@ -1,8 +1,18 @@
+using System.Reflection;
 using GraphQL;
+using GraphQL.Types;
+using Microsoft.EntityFrameworkCore;
+using MinimalApi.Database;
+using MinimalApi.GraphQL;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<IServiceProvider>(c => new FuncServiceProvider(type => c.GetRequiredService(type)));
+builder.Services.AddDbContext<AddressBookDb>(options => options.UseInMemoryDatabase("AddressBook")); // dbcontext
+builder.Services.AddScoped<AddressBookMutation>();
+builder.Services.AddScoped<AddressBookSchema>();
+
 builder.Services.AddGraphQL(b => b
-    .AddAutoSchema<Query>() // schema
+    .AddGraphTypes() // schema
     .AddSystemTextJson()); // serializer
 
 var app = builder.Build();
